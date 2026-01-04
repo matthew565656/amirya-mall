@@ -156,6 +156,47 @@
             transform: scaleX(-1);
             /* عكس اتجاه السهم */
         }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .plan-page {
+                padding: 80px 15px;
+            }
+
+            .planner-card {
+                padding: 30px 15px;
+            }
+
+            .planner-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 25px 0;
+            }
+
+            .option-btn {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-align: right;
+            }
+
+            .option-icon {
+                margin-bottom: 0;
+                font-size: 2rem;
+            }
+
+            .back-btn-custom {
+                top: 10px;
+                left: 10px;
+                width: 35px;
+                height: 35px;
+            }
+        }
     </style>
 </head>
 
