@@ -1682,6 +1682,36 @@ footer {
         gap: 30px;
     }
 
+    /* Fix Huge Social Icons */
+    .social-icon-wrapper {
+        width: 45px !important;
+        height: 45px !important;
+        flex-shrink: 0;
+        margin: 0 auto;
+        /* Center if stacked */
+    }
+
+    .social-icon-wrapper img,
+    .social-icon img {
+        width: 35px !important;
+        height: 35px !important;
+        min-width: 35px !important;
+        max-width: 35px !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin: 0 5px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
     /* Additional Index Optimizations */
     .ceo-container {
         grid-template-columns: 1fr;
