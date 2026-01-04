@@ -3,6 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Amria Mall - أفضل مول تجاري في منطقة العامرية، بغداد. تسوق من أفضل العلامات التجارية العالمية والمحلية">
@@ -55,9 +59,8 @@
                 <li><a href="events.html">الحفلات</a></li>
                 <li><a href="#about">عن المول</a></li>
                 <li><a href="#ceo">المدير التنفيذي</a></li>
-                <li><a href="#stores">محلاتنا</a></li>
-                <li><a href="#media">فريق الإعلام</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
+                <li><a href="stores.html">محلاتنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
         </nav>
     </header>
@@ -150,182 +153,10 @@
         </div>
     </section>
 
-    <!-- Stores Section -->
-    <section class="stores" id="stores">
-        <h2 class="section-title fade-in">محلاتنا</h2>
-        <p class="section-subtitle fade-in">اكتشف أفضل العلامات التجارية العالمية والمحلية</p>
-
-        <div class="stores-grid">
-            <div class="store-card fade-in">
-                <img src="assets/logos/shopping-shop.jpg" alt="Shopping Shop">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/lc-waikiki.jpg" alt="LC Waikiki">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/miniso.jpg" alt="Miniso">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/khatar-homestyle.jpg" alt="خطار Home Style">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/dhifaf-baghdad.png" alt="Dhifaf Baghdad">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/english-home.jpg" alt="English Home">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/kudo-kudo.jpg" alt="Kudo Kudo">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/yoyoso.jpg" alt="Yoyoso">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/chili-house.jpg" alt="Chili House">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/ilahui.jpg" alt="ilahui">
-            </div>
-
-            <div class="store-card fade-in">
-                <img src="assets/logos/oodi.jpg" alt="oodi">
-            </div>
-        </div>
-    </section>
-
-    <!-- Media Team Section -->
-    <section class="media-team" id="media">
-        <h2 class="section-title fade-in">فريق الإعلام</h2>
-        <p class="section-subtitle fade-in">تواصل معنا للإعلان عن محلك في المول</p>
-
-        <div class="team-notice fade-in">
-            ⚠️ <strong>ملاحظة:</strong> خدمات الإعلان متاحة فقط للمحلات المتواجدة داخل مول العامرية
-        </div>
-
-        <div class="team-grid">
-            <div class="team-card fade-in">
-                <img src="assets/hakam-alaa.png" alt="الحكم علاء" class="team-photo">
-                <h3>الحكم علاء</h3>
-                <p class="team-role">مسؤول الإعلام والتصوير</p>
-                <div class="team-contact">
-                    <a href="tel:+9647700000001">📱 770 000 0001</a>
-                    <a href="mailto:hakam@amriamall.iq">✉️ hakam@amriamall.iq</a>
-                    <a href="https://instagram.com/al_hakam1" target="_blank" class="instagram-link">
-                        📷 @al_hakam1
-                    </a>
-                </div>
-            </div>
-
-            <div class="team-card fade-in">
-                <img src="assets/abdulrahman.png" alt="عبدالرحمن" class="team-photo">
-                <h3>عبدالرحمن</h3>
-                <p class="team-role">منتج المحتوى</p>
-                <div class="team-contact">
-                    <a href="tel:+9647700000002">📱770 000 0002</a>
-                    <a href="mailto:abdulrahman@amriamall.iq">✉️ abdulrahman@amriamall.iq</a>
-                    <a href="https://instagram.com/abdalrahman.altememi" target="_blank" class="instagram-link">
-                        📷 @abdalrahman.altememi
-                    </a>
-                </div>
-            </div>
-
-            <div class="team-card fade-in">
-                <img src="assets/ali-jasim.jpg" alt="علي جاسم" class="team-photo">
-                <h3>علي جاسم</h3>
-                <p class="team-role">مصمم جرافيك</p>
-                <div class="team-contact">
-                    <a href="tel:+9647700000003">📱770 000 0003</a>
-                    <a href="mailto:ali@amriamall.iq">✉️ ali@amriamall.iq</a>
-                    <a href="https://instagram.com/k.c8" target="_blank" class="instagram-link">
-                        📷 @k.c8
-                    </a>
-                </div>
-            </div>
-
-            <div class="team-card fade-in">
-                <div class="team-avatar">📊</div>
-                <h3>مصطفى</h3>
-                <p class="team-role">مدير التسويق الرقمي</p>
-                <div class="team-contact">
-                    <a href="tel:+9647700000004">📱 +964 770 000 0004</a>
-                    <a href="mailto:mustafa@amriamall.iq">✉️ mustafa@amriamall.iq</a>
-                    <a href="https://instagram.com/mustafa_media" target="_blank" class="instagram-link">
-                        📷 @mustafa_media
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title fade-in">تواصل مع المشرفين</h2>
-
-        <div class="contact-container">
-            <div class="contact-info slide-right">
-                <h3>معلومات التواصل</h3>
-
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div>
-                        <h4>العنوان</h4>
-                        <p>منطقة العامرية، بغداد، العراق</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <div>
-                        <h4>رقم موحد</h4>
-                        <p dir="ltr">+964 770 123 4567</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <div>
-                        <h4>البريد الإلكتروني</h4>
-                        <p>info@amriamall.iq</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-icon">⏰</span>
-                    <div>
-                        <h4>ساعات العمل</h4>
-                        <p>جميع الايام من الساعه الحادية عشر صباحا حتى الحادية عشر مساء</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form slide-left">
-                <h3 style="color: var(--secondary); margin-bottom: 20px;">أرسل رسالة</h3>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="الاسم الكامل" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="رقم الهاتف">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="رسالتك..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
-                </form>
-            </div>
-        </div>
+    <!-- CTA to Stores -->
+    <section class="events-cta" style="margin: 50px; border-radius: 20px;">
+        <p>🛍️ اكتشف أفضل العلامات التجارية العالمية والمحلية</p>
+        <a href="stores.html" class="events-btn">تصفح محلاتنا</a>
     </section>
 
     <!-- Footer -->
@@ -340,9 +171,9 @@
             <div class="footer-section">
                 <h4>روابط سريعة</h4>
                 <a href="#about">عن المول</a>
-                <a href="#stores">محلاتنا</a>
-                <a href="#media">فريق الإعلام</a>
-                <a href="#contact">تواصل معنا</a>
+                <a href="stores.html">محلاتنا</a>
+                <a href="offers.html">العروض</a>
+                <a href="contact.html">تواصل معنا</a>
             </div>
 
             <div class="footer-section">
