@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لحظات العامرية | Amria Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .gallery-page {
+            padding-top: 100px;
+            padding-bottom: 50px;
+            min-height: 100vh;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        /* Instagram Post Style */
+        .instagram-feed {
+            max-width: 600px;
+            /* عرض مناسب للبوست */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .insta-post {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            padding: 2px;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #1a1a1a;
+            object-fit: cover;
+        }
+
+        .username {
+            font-weight: bold;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .location {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .post-image {
+            width: 100%;
+            display: block;
+        }
+
+        .post-actions {
+            padding: 15px;
+            display: flex;
+            gap: 20px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .action-btn {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+            color: var(--primary);
+        }
+
+        .post-content {
+            padding: 0 15px 20px;
+        }
+
+        .likes-count {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .caption {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            white-space: pre-line;
+            /* يحافظ على الأسطر الجديدة */
+        }
+
+        .hashtags {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .post-time {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(232, 111, 37, 0.1);
+            border-top: 1px solid rgba(232, 111, 37, 0.2);
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-bg"></div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <img src="assets/logos/amria-mall.jpg" alt="Amria Mall Logo">
+                <span class="logo-text">Amria Mall</span>
+            </a>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html" class="active">لحظات العامرية</a></li>
+                <li><a href="plan-visit.html">خطط زيارتك</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="hours.html">ساعات العمل</a></li>
+                <li><a href="events.html">الحفلات</a></li>
+                <li><a href="index.html#about">عن المول</a></li>
+                <li><a href="index.html#stores">محلاتنا</a></li>
+                <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="gallery-page">
+        <div class="gallery-header fade-in">
+            <h1>#لحظات_العامرية</h1>
+            <p>أجمل اللحظات بعدسة زوارنا ومحبينا</p>
+        </div>
+
+        <div class="instagram-feed">
+
+            <!-- Featured Post -->
+            <div class="insta-post fade-in">
+                <div class="post-header">
+                    <div class="user-avatar">
+                        <img src="assets/logos/amria-mall.jpg" alt="Amria Mall">
+                    </div>
+                    <div>
+                        <div class="username">amiriyamall</div>
+                        <div class="location">Baghdad, Iraq</div>
+                    </div>
+                </div>
+
+                <img src="assets/christmas-night.png" alt="Amria Mall Christmas" class="post-image">
+
+                <div class="post-actions">
+                    <div class="action-btn">❤️</div>
+                    <div class="action-btn">💬</div>
+                    <div class="action-btn">✈️</div>
+                </div>
+
+                <div class="post-content">
+                    <div class="likes-count">8,542 likes</div>
+                    <p class="caption">سحر الكرسمس يملأ مول العامرية 🎄✨
+                        أجواء دافئة وفرح يلمع في كل زاوية 🎅🤍
+
+                        <span class="hashtags">#مول_العامرية_يجمعنا</span>
+                    </p>
+                    <div class="post-time">2 HOURS AGO</div>
+                </div>
+            </div>
+
+            <!-- Future posts can be added here easily -->
+
+        </div>
+
+        <div class="cta-section fade-in">
+            <h2 style="color:white; margin-bottom: 20px;">شاركنا لحظاتك! ⭐</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">التقط صورة مميزة وارفعها على انستغرام مع منشن
+                @amiriyamall</p>
+            <a href="https://www.instagram.com/amiriyamall/" target="_blank" class="cta-btn">
+                <span>📷</span>
+                <span>زيارة صفحتنا على انستغرام</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن مول العامرية</h4>
+                <p>وجهتك المثالية للتسوق والترفيه في قلب بغداد. نقدم تجربة تسوق فريدة مع أفضل العلامات التجارية
+                    العالمية.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <a href="index.html">الرئيسية</a>
+                <a href="gallery.html">لحظات العامرية</a>
+                <a href="offers.html">العروض</a>
+                <a href="events.html">الحفلات</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>تابعونا</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Amiriya-Mall-%D9%85%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%B1%D9%8A%D8%A9/100087418976202/?ref=_xav_ig_profile_page_web"
+                        target="_blank" class="social-item" aria-label="Facebook">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/facebook.png" alt="Facebook">
+                        </div>
+                        <span class="social-name">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/amiriyamall/" target="_blank" class="social-item"
+                        aria-label="Instagram">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/instagram.png" alt="Instagram">
+                        </div>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    <a href="https://www.threads.com/@amiriyamall?xmt=AQF0IqWY3dMfgrMJ8sy5Ny-c9dSHOaaBbwCkY887fTW3ZrA"
+                        target="_blank" class="social-item" aria-label="Threads">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/threads.png" alt="Threads">
+                        </div>
+                        <span class="social-name">Threads</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-credit">Developed by Amria Mall Programmers</p>
+            <p class="footer-developer">مصطفى علاء</p>
+            <p style="color: rgba(255,255,255,0.4); margin-top: 20px; font-size: 0.9rem;">
+                © 2026 Amria Mall. جميع الحقوق محفوظة
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // No JS needed for static posts, keeping file clean for now
+        // Animations handled by main.js scroll observer
+    </script>
+</body>
+
+</html>

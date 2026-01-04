@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العروض الحصرية | Amria Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .offers-page {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(232, 111, 37, 0.3);
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offer-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            color: white;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(232, 111, 37, 0.15);
+        }
+
+        .offer-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+            z-index: 2;
+        }
+
+        .offer-image {
+            height: 220px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .offer-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(232, 111, 37, 0.2), transparent 70%);
+        }
+
+        .offer-details {
+            padding: 25px;
+            color: white;
+        }
+
+        .offer-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .offer-desc {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .offer-validity {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-bg"></div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <img src="assets/logos/amria-mall.jpg" alt="Amria Mall Logo">
+                <span class="logo-text">Amria Mall</span>
+            </a>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html">لحظات العامرية</a></li>
+                <li><a href="plan-visit.html">خطط زيارتك</a></li>
+                <li><a href="offers.html" class="active">العروض</a></li>
+                <li><a href="hours.html">ساعات العمل</a></li>
+                <li><a href="events.html">الحفلات</a></li>
+                <li><a href="index.html#about">عن المول</a></li>
+                <li><a href="index.html#stores">محلاتنا</a></li>
+                <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="offers-page">
+        <!-- Ticker -->
+        <div class="news-ticker">
+            <div class="ticker-content">
+                <span class="ticker-item">🔥 خصم 50% في LC Waikiki لفترة محدودة!</span>
+                <span class="ticker-item">🎁 اشترِ قطعة واحصل على الثانية مجاناً من Miniso</span>
+                <span class="ticker-item">🍔 وجبة مجانية مع كل طلبين من Chili House</span>
+                <span class="ticker-item">⚡ تخفيضات الموسم في Shopping Shop تصل إلى 70%</span>
+            </div>
+        </div>
+
+        <h1 class="section-title" style="margin-top: 50px;">أحدث العروض</h1>
+
+        <div class="offers-grid">
+            <!-- Offer 1 -->
+            <div class="offer-card">
+                <div class="offer-tag">خصم 50%</div>
+                <div class="offer-image">👕</div>
+                <div class="offer-details">
+                    <h3 class="offer-title">تخفيضات LC Waikiki الكبرى</h3>
+                    <p class="offer-desc">استمتع بخصومات تصل إلى 50% على تشكيلة الصيف الجديدة. العرض يشمل قسمي الرجال
+                        والنساء.</p>
+                    <div class="offer-validity">⏰ ينتهي خلال 3 أيام</div>
+                </div>
+            </div>
+
+            <!-- Offer 2 -->
+            <div class="offer-card">
+                <div class="offer-tag">1 + 1 مجاناً</div>
+                <div class="offer-image">🧸</div>
+                <div class="offer-details">
+                    <h3 class="offer-title">عرض Miniso المميز</h3>
+                    <p class="offer-desc">اشترِ أي دمية واحصل على الثانية مجاناً! عرض خاص للأطفال والعائلات.</p>
+                    <div class="offer-validity">⏰ ساري حتى نفاذ الكمية</div>
+                </div>
+            </div>
+
+            <!-- Offer 3 -->
+            <div class="offer-card">
+                <div class="offer-tag">عرض غداء</div>
+                <div class="offer-image">🍔</div>
+                <div class="offer-details">
+                    <h3 class="offer-title">غداء التوفير في Chili House</h3>
+                    <p class="offer-desc">وجبة كاملة مع مشروب وحلى بسعر 10,000 د.ع فقط. العرض ساري من 12 ظهراً لغااية 5
+                        مساءً.</p>
+                    <div class="offer-validity">⏰ يومياً</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن مول العامرية</h4>
+                <p>وجهتك المثالية للتسوق والترفيه في قلب بغداد. نقدم تجربة تسوق فريدة مع أفضل العلامات التجارية
+                    العالمية.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <a href="index.html">الرئيسية</a>
+                <a href="gallery.html">لحظات العامرية</a>
+                <a href="offers.html">العروض</a>
+                <a href="events.html">الحفلات</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>تابعونا</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Amiriya-Mall-%D9%85%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%B1%D9%8A%D8%A9/100087418976202/?ref=_xav_ig_profile_page_web"
+                        target="_blank" class="social-item" aria-label="Facebook">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/facebook.png" alt="Facebook">
+                        </div>
+                        <span class="social-name">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/amiriyamall/" target="_blank" class="social-item"
+                        aria-label="Instagram">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/instagram.png" alt="Instagram">
+                        </div>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    <a href="https://www.threads.com/@amiriyamall?xmt=AQF0IqWY3dMfgrMJ8sy5Ny-c9dSHOaaBbwCkY887fTW3ZrA"
+                        target="_blank" class="social-item" aria-label="Threads">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/threads.png" alt="Threads">
+                        </div>
+                        <span class="social-name">Threads</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-credit">Developed by Amria Mall Programmers</p>
+            <p class="footer-developer">مصطفى علاء</p>
+            <p style="color: rgba(255,255,255,0.4); margin-top: 20px; font-size: 0.9rem;">
+                © 2026 Amria Mall. جميع الحقوق محفوظة
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

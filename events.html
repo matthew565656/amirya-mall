@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحفلات والفعاليات | Amria Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .events-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .event-hero {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        .event-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 20px 5%;
+            margin-bottom: 80px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(232, 111, 37, 0.2);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 300px;
+            /* Increased height for better visibility */
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-date {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .event-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .event-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .event-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            z-index: 2;
+        }
+
+        .status-upcoming {
+            background: var(--primary);
+        }
+
+        .status-past {
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-bg"></div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <img src="assets/logos/amria-mall.jpg" alt="Amria Mall Logo">
+                <span class="logo-text">Amria Mall</span>
+            </a>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html">لحظات العامرية</a></li>
+                <li><a href="plan-visit.html">خطط زيارتك</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="hours.html">ساعات العمل</a></li>
+                <li><a href="events.html" class="active">الحفلات</a></li>
+                <li><a href="index.html#about">عن المول</a></li>
+                <li><a href="index.html#stores">محلاتنا</a></li>
+                <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="events-page">
+        <div class="event-hero fade-in">
+            <h1>الحفلات والفعاليات 🎉</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem;">اكتشف أجمل اللحظات والأنشطة في مول العامرية</p>
+        </div>
+
+        <div class="events-grid">
+            <!-- Event: Army Day (New) -->
+            <div class="event-card fade-in" style="margin: 0 auto; max-width: 600px;">
+                <span class="event-status status-upcoming">الدعوة عامة</span>
+                <img src="assets/events/army-day.png" class="event-image" alt="عيد الجيش العراقي"
+                    style="object-position: top; height: auto; min-height: 300px;">
+                <div class="event-content">
+                    <span class="event-date">📅 الثلاثاء 06/01 - الساعة 8:00 مساءً</span>
+                    <h3>احتفالية عيد الجيش العراقي 🇮🇶</h3>
+                    <p>تعالوا نحتفل سوا! أجواء فرح، ألعاب، واستعراضات مميزة مع <strong>فرقة بومبي الاستعراضية</strong>.
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--secondary); margin-top: auto; font-weight: bold;">
+                        📍 مول العامرية – الطابق الثالث (طابق الألعاب)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن مول العامرية</h4>
+                <p>وجهتك المثالية للتسوق والترفيه في قلب بغداد. نقدم تجربة تسوق فريدة مع أفضل العلامات التجارية
+                    العالمية.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <a href="index.html">الرئيسية</a>
+                <a href="gallery.html">لحظات العامرية</a>
+                <a href="offers.html">العروض</a>
+                <a href="events.html">الحفلات</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>تابعونا</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Amiriya-Mall-%D9%85%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%B1%D9%8A%D8%A9/100087418976202/?ref=_xav_ig_profile_page_web"
+                        target="_blank" class="social-item" aria-label="Facebook">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/facebook.png" alt="Facebook">
+                        </div>
+                        <span class="social-name">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/amiriyamall/" target="_blank" class="social-item"
+                        aria-label="Instagram">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/instagram.png" alt="Instagram">
+                        </div>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    <a href="https://www.threads.com/@amiriyamall?xmt=AQF0IqWY3dMfgrMJ8sy5Ny-c9dSHOaaBbwCkY887fTW3ZrA"
+                        target="_blank" class="social-item" aria-label="Threads">
+                        <div class="social-icon-wrapper">
+                            <img src="assets/social/threads.png" alt="Threads">
+                        </div>
+                        <span class="social-name">Threads</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-credit">Developed by Amria Mall Programmers</p>
+            <p class="footer-developer">مصطفى علاء</p>
+            <p style="color: rgba(255,255,255,0.4); margin-top: 20px; font-size: 0.9rem;">
+                © 2026 Amria Mall. جميع الحقوق محفوظة
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
