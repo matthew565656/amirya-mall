@@ -30,10 +30,16 @@
 
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr;
+            /* Single column for focus */
             gap: 40px;
-            padding: 20px 5%;
+            padding: 20px 15px;
+            /* Reduced side padding for mobile */
             margin-bottom: 80px;
+            max-width: 800px;
+            /* Limit width on large screens */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .event-card {
@@ -49,20 +55,24 @@
         }
 
         .event-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--primary);
             box-shadow: 0 10px 30px rgba(232, 111, 37, 0.2);
         }
 
         .event-image {
             width: 100%;
-            height: 300px;
-            /* Increased height for better visibility */
-            object-fit: cover;
+            height: auto;
+            /* Allow auto height to preserve aspect ratio */
+            min-height: 250px;
+            object-fit: contain;
+            /* Don't crop the image, show it full */
+            background: #000;
+            /* Dark background for the image area */
         }
 
         .event-content {
-            padding: 25px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -90,10 +100,10 @@
 
         .event-status {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 15px;
-            border-radius: 20px;
+            top: 15px;
+            right: 15px;
+            padding: 6px 12px;
+            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: bold;
             color: white;
@@ -104,8 +114,30 @@
             background: var(--primary);
         }
 
-        .status-past {
-            background: #666;
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .event-hero {
+                padding: 30px 15px;
+            }
+
+            .event-hero h1 {
+                font-size: 2rem;
+            }
+
+            .event-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .event-content {
+                padding: 15px;
+            }
+
+            .event-status {
+                top: 10px;
+                right: 10px;
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -156,8 +188,7 @@
             <!-- Event: Army Day (New) -->
             <div class="event-card fade-in" style="margin: 0 auto; max-width: 600px;">
                 <span class="event-status status-upcoming">الدعوة عامة</span>
-                <img src="assets/events/army-day.png" class="event-image" alt="عيد الجيش العراقي"
-                    style="object-position: top; height: auto; min-height: 300px;">
+                <img src="assets/events/army-day-new.png" class="event-image" alt="عيد الجيش العراقي">
                 <div class="event-content">
                     <span class="event-date">📅 الثلاثاء 06/01 - الساعة 8:00 مساءً</span>
                     <h3>احتفالية عيد الجيش العراقي 🇮🇶</h3>
